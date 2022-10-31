@@ -8,6 +8,8 @@ public abstract class Food implements Consumable {
         if (name==null || ((Food)arg0).name==null) return false; // Шаг 2
         return name.equals(((Food)arg0).name); // Шаг 3
     }
+
+
     public String toString() {
         return name;
     }

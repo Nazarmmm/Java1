@@ -1,4 +1,8 @@
-public class MainApplication {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
     // Конструктор класса отсутствует!!!
     // Главный метод главного класса
     @SuppressWarnings("unchecked")
@@ -8,15 +12,16 @@ public class MainApplication {
         // Анализ аргументов командной строки и создание для них
         // экземпляров соответствующих классов для завтрака
         int itemsSoFar = 0;
+        for (int i = 0; i < 6; i++) {                                         //new
+            System.out.println("Введите размер бургера (small, medium, large)");
+            breakfast[i] = new Burger(new Scanner(System.in).nextLine());
+        }
+        Burger.burgersNumber();                                                //new
         for (String arg: args) {
             String[] parts = arg.split("/");
-            if (parts[0].equals("Cheese")) {
-// У сыра дополнительных параметров нет
-                breakfast[itemsSoFar] = new Cheese();
-            } else
-            if (parts[0].equals("Apple")) {
+            if (parts[0].equals("Burger")) {
 // У яблока – 1 параметр, который находится в parts[1]
-                breakfast[itemsSoFar] = new Apple(parts[1]);
+                breakfast[itemsSoFar] = new Burger(parts[1]);
             }
 // ... Продолжается анализ других продуктов для завтрака
             itemsSoFar++;
