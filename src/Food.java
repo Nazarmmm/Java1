@@ -19,6 +19,10 @@ public abstract class Food implements Consumable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void consume() {
+        System.out.println(this + " съеден");
+    }
 // Реализация метода consume() удалена из базового класса Food
 // Это можно сделать, потому что сам Food - абстрактный
 }

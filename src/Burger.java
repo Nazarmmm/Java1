@@ -1,4 +1,4 @@
-public class Burger extends Food {
+public class Burger extends Food{
     // Новое внутреннее поле данных РАЗМЕР
     private String size;
 
@@ -6,6 +6,8 @@ public class Burger extends Food {
     private static int numMedium = 0;               //new
 
     private static int numLarge = 0;                //new
+
+
 
     public Burger(String size) {
         super("Бургер");        // Вызвать конструктор предка, передав ему имя класса
@@ -61,6 +63,18 @@ public class Burger extends Food {
         }
     }
 
+    public static int getNumSmall() {
+        return numSmall;
+    }
+
+    public static int getNumMedium() {
+        return numMedium;
+    }
+
+    public static int getNumLarge() {
+        return numLarge;
+    }
+
     public static void burgersNumber(){               //new
         int s = numSmall;
         int m = numMedium;
@@ -68,5 +82,15 @@ public class Burger extends Food {
         System.out.println("Маленьких " + s);
         System.out.println("Средних " + m);
         System.out.println("Больших " + l);
+    }
+
+    @Override
+    public void consum() {
+
+    }
+
+    @Override
+    public int calculateCalories() {
+        return 0;
     }
 }

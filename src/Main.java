@@ -5,6 +5,19 @@ import java.util.Scanner;
 public class Main {
     // Конструктор класса отсутствует!!!
     // Главный метод главного класса
+    public static int Caloriers=0;
+    public void calculateCalories(String size) {                                       //new
+        if (size.equalsIgnoreCase("Large")) {
+            Caloriers+=600;
+
+        } else if (size.equalsIgnoreCase("medium")) {
+            Caloriers+=300;
+
+        } else if (size.equalsIgnoreCase("Small")) {
+            Caloriers+=150;
+
+        }
+    }
     @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception {
         // Определение ссылок на продукты завтрака
@@ -16,6 +29,7 @@ public class Main {
             System.out.println("Введите размер бургера (small, medium, large)");
             breakfast[i] = new Burger(new Scanner(System.in).nextLine());
         }
+
         Burger.burgersNumber();                                                //new
         for (String arg: args) {
             String[] parts = arg.split("/");
@@ -37,6 +51,7 @@ public class Main {
 // выделено с запасом, и они могут быть не
 // использованы все
                 break;
+        System.out.println("Ккал: " + String.valueOf(Caloriers));
         System.out.println("Всего хорошего!");
     }
 }

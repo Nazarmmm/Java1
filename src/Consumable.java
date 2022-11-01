@@ -1,3 +1,3 @@
-public interface Consumable {
-    public abstract void consume();
+public interface Consumable extends Nutritious {
+    public abstract void consum();
 }
